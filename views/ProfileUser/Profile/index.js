@@ -16,16 +16,15 @@ const fakedata = {
 }
 
 function InfoUser() {
-    const [isEdit, setIsEdit] = useState(-1)
 
     return (<div className={cx('wrapper')}>
         <h1 className={cx('title')}>profile infomation</h1>
-        <ItemInput title={'name'} value={fakedata.name} disabled={isEdit === 0} id={0} setEdit={setIsEdit} />
-        <ItemInput title={'gender'} value={fakedata.Gender} disabled={isEdit === 1} id={1} setEdit={setIsEdit} />
-        <ItemInput title={'birthday'} value={fakedata.Birthday} disabled={isEdit === 2} id={2} setEdit={setIsEdit} />
-        <ItemInput title={'address'} value={fakedata.Address} disabled={isEdit === 3} id={3} setEdit={setIsEdit} />
-        <ItemInput title={'phone'} value={fakedata.phone} disabled={isEdit === 4} id={4} setEdit={setIsEdit} />
-        <ItemInput title={'email'} value={fakedata.email} disabled={isEdit === 5} id={5} setEdit={setIsEdit} />
+        <ItemInput title={'name'} value={fakedata.name} />
+        <ItemInput title={'gender'} value={fakedata.Gender} />
+        <ItemInput title={'birthday'} value={fakedata.Birthday} />
+        <ItemInput title={'address'} value={fakedata.Address} />
+        <ItemInput title={'phone'} value={fakedata.phone} />
+        <ItemInput title={'email'} value={fakedata.email} />
         <div className={cx('boxAboutInput')}>
             <h3 className={cx('titleItem')}>about:</h3>
 
