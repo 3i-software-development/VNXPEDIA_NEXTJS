@@ -174,16 +174,7 @@ function CategoryFilter({ isSearch, category, price, priceft, day, tourTags, gro
                 <div className={cx('boxFillterItem', 'boxArchives', showFillter === 2 ? 'active' : null)}>
                     <h2 className={cx('title')} >filter by price <GrPowerReset className={cx('icon-reset')} onClick={() => { setActivePrice(-1); setvlfromcost(0); setvlendcost(15000); setShowFillter(0) }} /></h2>
 
-                    {/* {price.elements?.map((element, index) => (
-                        <div
-                            className={cx('itemCategory', 'itemMobileShow', activeCategory === index ? 'active' : null)}
-                            key={index}
-                            onClick={() => handelActiveItemCate(index)}
-                        >
-                            <span className={cx('itemName')}>{element.name}</span>
-                            <span className={cx('itemAmount')}>{element.amount}</span>
-                        </div>
-                    ))} */}
+                    { }
 
                     {
                         priceft?.elements.map((item, index) => (
@@ -192,23 +183,7 @@ function CategoryFilter({ isSearch, category, price, priceft, day, tourTags, gro
                             </div>
                         ))
                     }
-                    {/* <div className={cx('itemMobileShow')}>
-                        <div className={cx('box')}>
-                            <span className={cx('text')}>$150</span>
-                            <span className={cx('text')}>{`$${Math.floor((valuePrice * 3000) / 100)}`}</span>
-                        </div>
-                        <div className={cx('boxRange')}>
-                            <input
-                                className={cx('rangeFilter')}
-                                type="range"
-                                value={valuePrice}
-                                min="0"
-                                max="100"
-                                onChange={(e) => setValuePrice(e.target.value)}
-                            ></input>
-                            <progress className={cx('rangeFilterColor')} min="0" max="100" value={valuePrice}></progress>
-                        </div>
-                    </div> */}
+                    { }
                 </div>
             ) : null}
             {day ? (
