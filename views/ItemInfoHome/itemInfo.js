@@ -8,7 +8,6 @@ const cx = classNames.bind(style);
 function ItemInfo({ data, id }) {
     const clases = cx('wrapper', { backgroundBlack: id % 2 === 0 });
     const newtitle = data.title.split('<br/>');
-    // console.log(newtitle)
 
     return (
         <div className={clases}>

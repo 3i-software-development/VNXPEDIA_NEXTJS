@@ -1,13 +1,11 @@
-import React from 'react'
+import Loading from '@/components/Loading';
+import { GetlistImg } from '@/hook/GetListImg';
+import { ListHotel } from '@/pages/api/QuerryAPI';
 import style from '@/styles/Hoteldetail.module.scss';
 import classNames from 'classnames/bind';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { AiFillStar } from 'react-icons/ai';
-import Loading from '@/components/Loading';
-import { ListHotel } from '@/pages/api/QuerryAPI';
-import { GetlistImg } from '@/hook/GetListImg';
-import Hotelcard from '@/views/HotelCard/Hotelcard';
 
 const cx = classNames.bind(style);
 
@@ -26,7 +24,6 @@ const HotelDetail = () => {
 
         <div className={cx('Siminal-Hotel')}>
             {getHotelDetail.data && getHotelDetail.data.Object.slice(0, 3).map((d, i) =>
-                // <Hotelcard data={d} key={i} to={`/hotel-detail/${d.id}`} />
                 <Link href={`/hotel-detail/${d.id}`} className={cx('card')} key={i}>
                     <div className={cx('card-img')} >
                         <Image src={GetlistImg(d.gallery)[0]} alt="vnxpedia-tour-img" className={cx('img')} width={200} height={200} />

@@ -3,13 +3,15 @@ import classNames from 'classnames/bind';
 import anh1 from '@/public/anh1.png';
 import anh2 from '@/public/anh2.png';
 import anh3 from '@/public/anh3.png';
-import anh4 from '@/public/anh4.png';
+import anh4 from '@/public/images/bn3.jpg';
 import anh5 from '@/public/anh5.png';
 import anh6 from '@/public/anh6.png';
 import anh7 from '@/public/anh7.png';
+import anh8 from '@/public/images/bn5.webp';
 import Image from 'next/image';
 import BannerIMG from '@/views/BannerSlide/BannerIMG';
 import Headpage from '@/components/Head/head';
+import Background from '@/views/Background/Background';
 
 const cx = classNames.bind(style);
 
@@ -19,46 +21,55 @@ const Responsible = () => {
             <Headpage />
             <BannerIMG img={anh1} title='OUR FOCUS ON SUSTAINABILITY' bg='bg' />
             <div className={cx('text1')}>
-                <p>At Black Tomato, we believe in the positive influence travel can have. Not just for individuals and their experiences but for the destinations that receive them and the world as a whole.
+                <p>At LuxuryVietTravel, we strongly believe in the transformative power of travel. It's not just about personal experiences, but also about the impact it can have on the destinations we visit and the world as a whole.
                     <br />
                     <br />
-                    Travel has always helped fund local economies and in recent years, in particular, become increasingly adept at preserving the culture and supporting conservation of lands and protection of ecosystems. Travel creates empathy and understanding, can inspire and educate. It creates the human to human and human to nature connection that the world needs right now.</p>
+                    Travel has always been a significant contributor to local economies, and in recent times, it has become even more critical in promoting the preservation of cultures and the conservation of natural environments. Travel fosters empathy and understanding, inspires and educates, and creates connections between people and the natural world. These connections are more important now than ever before.
+
+
+                </p>
             </div>
-            <BannerIMG img={anh2} title='CARBON OFFSETTING' />
+            {/* <BannerIMG img={anh2} title='CARBON OFFSETTING' /> */}
+            <Background img={anh2} text='CARBON OFFSETTING' />
             <div className={cx('text2')}>
                 <div className={cx('img')}>
                     <Image src={anh3} alt="img" />
                 </div>
                 <div className={cx('text')}>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                    <p>We - Luxuryvietravel always aim for responsible tourism, environmental protection, economic support, and community development. With a long-term vision, we not only take tourists to beautiful and unique destinations but also want to help Vietnam's tourism develop sustainably and be friendly to the environment.
                         <br />
                         <br />
-                        Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                        We understand that tourism is an industry that has a significant impact on the environment. Therefore, we respect and protect the environment by offering sustainable tourism products that aim to minimize the impact of tourism activities on the environment. We focus on special tourism programs where tourists can experience and participate in environmental protection activities such as gardening, garbage collection, recycling, and using sustainable products.
                         <br />
                         <br />
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.<br />
-                        Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                        In addition to environmental protection, we also care about economic support and community development. We always seek potential local economic development destinations and build special tourism programs to increase economic value for local areas. At the same time, we also work with local organizations to support educational programs and community development in the area.
+                        <br />
+                        <br />
+                        With all our activities, we always ensure that tourists will have an excellent tourism experience with the highest satisfaction. We commit to providing the best tourism services with a professional, friendly, and culturally aware staff.
+
+
                     </p>
                 </div>
             </div>
-            <BannerIMG img={anh4} title='COMMUNITY IMPACT' />
+            {/* <BannerIMG img={anh4} title='COMMUNITY IMPACT' /> */}
+            <Background img={anh4} text='COMMUNITY IMPACT' />
             <div className={cx('image')}>
                 <div className={cx('img1')}>
                     <Image src={anh5} alt="img-children" />
                 </div>
-                <div className={cx('img2')}>
+                {/* <div className={cx('img2')}>
                     <Image src={anh6} alt='img-person' />
-                </div>
+                </div> */}
                 <div className={cx('img3')}>
-                    <Image src={anh7} alt='img-elephant' />
+                    <Image src={anh8} alt='img-elephant' layout='responsive' />
                 </div>
 
             </div>
             <div className={cx('text1')}>
-                <p>Our carefully selected partners around the globe support sustainable travel and actively work to improve the communities in which they operate – this includes supporting micro-economies in Cambodia, the protection of the endangered rhino population in Kenya, and supporting sustainable tourism in the Indian Subcontinent.  Please speak to us about your specific itinerary and destination so that we can share details of how you can offset your trip.
+                <p> In conclusion, we hope to contribute to the sustainable development of tourism in Vietnam and the world. We hope that through our activities, tourism can become a sustainable and responsible industry for the environment while preserving and developing local cultural values.
                     <br />
                     <br />
-                    As the world becomes increasingly educated on the impact of our actions it is both our responsibility and focus to develop our corporate and client initiatives to ensure that we move to a future that is beyond sustainable.</p>
+                    We thank our customers for trusting and choosing Luxuryvietravel as their tourism partner. We commit to continuing to strive to provide customers with excellent tourism experiences while aiming for sustainable and responsible development goals.</p>
             </div>
 
         </div>

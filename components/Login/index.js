@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
+import { useApppContext } from '@/pages/_app';
 import axios from 'axios';
 import classNames from 'classnames/bind';
-import Link from 'next/link';
 import qs from "qs";
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaFacebook } from 'react-icons/fa';
-import style from './login.module.scss';
-import { useApppContext } from '@/pages/_app';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { toastError, toastSuccess } from '../Toast';
-import { Login } from '@/pages/api/QuerryAPI';
+import style from './login.module.scss';
 
 const cx = classNames.bind(style);
-// import { signIn } from "next-auth/react"
 
 const LogIn = ({ Click, setuser, close }) => {
     const {
@@ -24,7 +21,6 @@ const LogIn = ({ Click, setuser, close }) => {
         formState: { errors },
     } = useForm();
     const CT = useApppContext();
-    // const login = Login();
 
     const [showFPass, setShowFPass] = useState("hidden");
 
@@ -64,7 +60,6 @@ const LogIn = ({ Click, setuser, close }) => {
                     "application/x-www-form-urlencoded;charset=utf-8",
             },
         });
-        console.log(response);
         return response;
     };
 
@@ -154,7 +149,6 @@ const LogIn = ({ Click, setuser, close }) => {
                     <p className={cx('icon-fb')}><FaFacebook />LOGIN</p>
                 </div>
             </form>
-            {/* <ToastContainer /> */}
         </div >
 
 

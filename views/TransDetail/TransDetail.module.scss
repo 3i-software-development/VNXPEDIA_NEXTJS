@@ -13,7 +13,6 @@
     min-width: 300px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    // margin-bottom: 1.8vw;
     display: flex;
     flex-direction: column;
     margin: 5px;
@@ -67,7 +66,6 @@
 
     svg {
         margin-right: 5px;
-        // color: linear-gradient(rgb(251 163 21), rgb(255 206 25));
         color: rgb(203, 144, 26);
     }
 
@@ -133,7 +131,6 @@
 
 @media only screen and (max-width: 430px) {
     .main-hotel {
-        // padding: 1rem 1rem !important;
         ul {
             margin-left: 1rem;
         }

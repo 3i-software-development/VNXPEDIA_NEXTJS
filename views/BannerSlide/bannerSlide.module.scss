@@ -5,8 +5,6 @@
 .bannerMain {
     width: 100%;
     height: 100%;
-    // height: 35vw;
-    // min-height: 35rem;
 }
 
 .sheaderBox {
@@ -64,8 +62,6 @@
             height: 100%;
             width: 50%;
             max-width: 350px;
-            // margin-right: 2rem;
-
             border: 0.1rem solid var(--menu-text);
             border-radius: 0.2rem;
             background-color: var(--background-white-opacity);
@@ -88,8 +84,6 @@
                 .input {
                     background-color: var(--background-white-opacity);
                     font-size: 1.4rem;
-                    // border: 0.1rem solid var(--menu-text);
-                    // border-radius: 0.2rem;
                     height: 100%;
                     width: 100%;
                     padding: 0 10px;
@@ -172,7 +166,7 @@
     .text-img {
         padding: 0 10% !important;
 
-        h2 {
+        h1 {
             font-size: 2rem !important;
             letter-spacing: 0px !important;
         }

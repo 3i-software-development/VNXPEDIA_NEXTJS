@@ -66,69 +66,6 @@ const Index = () => {
 
                     <h2>Siminal Hotels</h2>
                     {hotelData.data && <HotelDetail />
-                        // <div className={cx('Siminal-Hotel')}>
-                        //     <Link href={`/hotel-detail/5258=`} className={cx('card')}>
-                        //         <div className={cx('card-img')}>
-                        //             <Image src={data.img} alt="vnxpedia-tour-img" className={cx('img')} />
-                        //         </div>
-                        //         <div className={cx('infor')}>
-                        //             <h6 className={cx('title')}>{data.title.toUpperCase()}</h6>
-                        //             <p className={cx('rate')}>
-                        //                 <span className={cx('rating')}>
-                        //                     <AiFillStar /> 4.8
-                        //                 </span>
-                        //                 <span className={cx('ratecount')}>
-                        //                     &#40; 28.091 Đánh giá &#41; |600 Đã được đặt
-                        //                 </span>
-                        //             </p>
-                        //             <p className={cx('price')}>
-                        //                 <span className={cx('price1')}>$ {data.price}</span>
-
-                        //             </p>
-                        //         </div>
-                        //     </Link>
-                        /* <Link href={`/hotel-detail/5258`} className={cx('card')}>
-                                <div className={cx('card-img')}>
-                                    <Image src={data.img} alt="vnxpedia-tour-img" className={cx('img')} />
-                                </div>
-                                <div className={cx('infor')}>
-                                    <h6 className={cx('title')}>{data.title.toUpperCase()}</h6>
-                                    <p className={cx('rate')}>
-                                        <span className={cx('rating')}>
-                                            <AiFillStar /> 4.8
-                                        </span>
-                                        <span className={cx('ratecount')}>
-                                            &#40; 28.091 Đánh giá &#41; |600 Đã được đặt
-                                        </span>
-                                    </p>
-                                    <p className={cx('price')}>
-                                        <span className={cx('price1')}>	&#36; {data.price}</span>
-
-                                    </p>
-                                </div>
-                            </Link>
-                            <Link href={`/hotel-detail/5258`} className={cx('card')}>
-                                <div className={cx('card-img')}>
-                                    <Image src={data.img} alt="vnxpedia-tour-img" className={cx('img')} />
-                                </div>
-                                <div className={cx('infor')}>
-                                    <h6 className={cx('title')}>{data.title.toUpperCase()}</h6>
-                                    <p className={cx('rate')}>
-                                        <span className={cx('rating')}>
-                                            <AiFillStar /> 4.8
-                                        </span>
-                                        <span className={cx('ratecount')}>
-                                            &#40; 28.091 Đánh giá &#41; |600 Đã được đặt
-                                        </span>
-                                    </p>
-                                    <p className={cx('price')}>
-                                        <span className={cx('price1')}>$ {data.price}</span>
-
-                                    </p>
-                                </div>
-                            </Link> */
-
-
                     }
                 </div>
                 }

@@ -1,15 +1,12 @@
 import classNames from 'classnames/bind';
 
-import Link from 'next/link';
-import { useForm } from 'react-hook-form';
-import { IoMdArrowRoundBack } from 'react-icons/io';
-import style from './signup.module.scss';
-import React from 'react';
 import axios from 'axios';
 import qs from 'qs';
-import { ToastContainer, toast } from 'react-toastify';
+import { useForm } from 'react-hook-form';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 import 'react-toastify/dist/ReactToastify.css';
 import { toastError, toastSuccess } from '../Toast';
+import style from './signup.module.scss';
 
 const cx = classNames.bind(style);
 
@@ -224,7 +221,6 @@ const Signup = ({ Click, openlogin }) => {
                             <span className={cx('error-message')}>Gender cannot be empty !</span>
                         )}
                     </div >
-                    {/* <SignUpGG /> */}
                     < button className={
                         cx('form-submit')} type="submit">
                         Sign Up
@@ -237,12 +233,8 @@ const Signup = ({ Click, openlogin }) => {
                             }}>
                             Had a Account? Login now
                         </p >
-                        {/* <Link href="/" className={cx('go-home')} onClick={() => Click(false)}>
-                            Go to home page
-                        </Link > */}
                     </div >
                 </form >
-                {/* <ToastContainer /> */}
             </div >
 
         </div >

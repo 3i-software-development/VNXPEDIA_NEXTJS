@@ -1,16 +1,13 @@
-import React from 'react'
-import classNames from 'classnames/bind';
 import style from '@/styles/informationBooking.module.scss';
-import { useForm } from "react-hook-form";
-import { useState, useEffect } from 'react';
 import axios from 'axios';
+import classNames from 'classnames/bind';
+import { useState } from 'react';
+import { useForm } from "react-hook-form";
 
-import $, { data } from 'jquery';
-import qs from 'qs';
-import { toastError, toastSuccess } from '@/hook/toastr';
-import national from '@/pages/api/national.json';
 import ScrollToTop from '@/hook/scrollToTop';
-// import Filedoc from '../../../data/Word.docx';
+import { toastError, toastSuccess } from '@/hook/toastr';
+import qs from 'qs';
+
 
 const cx = classNames.bind(style);
 
@@ -54,7 +51,6 @@ function Shareemail({ onClick, datas, title, long, close }) {
             localStorage.setItem('VNXUser', JSON.stringify(response.data));
         }
     };
-    //Download :  http://vnxpedia.com/Download${Filedoc.replace('/static/media/', ':')}
 
     return (
         <div className={cx("booking-infor")}>
@@ -130,9 +126,6 @@ function Shareemail({ onClick, datas, title, long, close }) {
                                     )
                                 }
                             ></textarea>
-                            {/* {errors.Email && errors.Email.type === 'required' && (
-                                <span className={cx("error-message")}>More information cannot be empty !</span>
-                            )} */}
                         </div>
                     </div>
                 </div>

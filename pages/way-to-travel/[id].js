@@ -7,9 +7,12 @@ import { Section, Title, Pagination } from '@/components';
 import { BannerSlide } from '@/views';
 import { banners } from '@/public/images';
 import { useRouter } from "next/router";
-import { Tourtype } from '../api/QuerryAPI';
+import { Tourtype, GetSocial } from '../api/QuerryAPI';
 import Loading from '@/components/Loading';
 import Headpage from '@/components/Head/head';
+import { useApppContext } from '../_app';
+import ChangeTextHTML from '@/hook/ChangetextHTML';
+import { GetlistImg } from '@/hook/GetListImg';
 
 
 const cx = classNames.bind(style);
@@ -21,9 +24,11 @@ const index = () => {
     const [page, setPage] = useState(1)
     const [sort, setsort] = useState();
     const tourList = Tourtype(router.query.id);
-
+    const contentLuxury = GetSocial('', router.query.id);
+    const CT = useApppContext();
     const lastIndex = page * 9;
     const firstIndex = lastIndex - 9;
+
 
 
     const sortp = (data) => {
@@ -62,15 +67,17 @@ const index = () => {
     if (tourList.error) {
         return <p>Error: {tourList.error.message}</p>;
     }
-
+    console.log('dataaaa', contentLuxury.data);
     return (
         <div className={cx('wrapper')}>
-            <Headpage />
-            <BannerSlide imgBanner={[banners.resolt]} className={cx('bannerBody')} classNameTitle={cx('titleBanner')} titleBanner={"choose your own trip style"} textBottom={"The tours featured throughout our website are intended to give you ideas for whats possible when you travel with us. Treat them simply as inspiration"} />
+            {contentLuxury.data && <Headpage descrip={ChangeTextHTML(contentLuxury.data.Object[0].full_text)} title={`LUXURYVIETRAVEL ${(router.query.id).split('TYPE_')[1]} TOUR`} />}
+            {contentLuxury.data && <BannerSlide imgBanner={[GetlistImg(contentLuxury.data.Object[0].gallery)[0]]} className={cx('bannerBody')} classNameTitle={cx('titleBanner')} titleBanner={"choose your own trip style"} />}
             <div id='list' />
-            {router.query.id && <Title text={`luxury ${(router.query.id).split('TYPE_')[1]} tour`} align={'center'} className={cx('titleTravel')} />}
 
             <div className={cx('main')}>
+                {router.query.id && <Title text={`luxury ${(router.query.id).split('TYPE_')[1]} tour`} align={'center'} className={cx('titleTravel')} />}
+                {contentLuxury.data && <p className={cx('descrip')}>{ChangeTextHTML(contentLuxury.data.Object[0].full_text)}</p>}
+
                 <div className={cx('sort')}>
                     <span >Sort by :</span>
                     <select name='sort-price' id='sort-price' className={cx("sortp")} onChange={(e) => setsort(e.target.value)}>

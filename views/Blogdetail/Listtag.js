@@ -13,7 +13,7 @@ const Listtag = ({ data }) => {
         <div className={cx('main-end')}>
             <div className={cx('tag-list')}>
                 {JSON.parse(data).filter(a => a != '#Blog').map((d, i) =>
-                    <div>
+                    <div key={i}>
                         <TitleLine key={i} text={d.replace('#', '').toUpperCase()} />
                     </div>
                 )}

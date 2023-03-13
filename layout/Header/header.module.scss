@@ -31,7 +31,6 @@
         font-size: 1.4rem;
         display: flex;
 
-        // text-shadow: var(--menu-text) 0.1rem 0 0.8rem;
         .item {
             position: relative;
             color: var(--menu-text);
@@ -159,18 +158,7 @@
         color: var(--primary);
     }
 
-    // &::after {
-    //     position: absolute;
-    //     content: '';
-    //     width: 3rem;
-    //     height: 3rem;
-    //     background-color: var(--white);
-    //     border-top: 0.2rem solid var(--black2);
-    //     border-left: 0.2rem solid var(--black2);
-    //     top: -1.2rem;
-    //     left: 1rem;
-    //     transform: translateY(-50%);
-    // }
+
 
     &::before {
         position: absolute;
@@ -214,7 +202,6 @@
     .login {
         display: flex;
         position: fixed;
-        // border: 2px solid rgb(224, 224, 18);
         right: 10px;
         max-width: 95%;
         top: 50px;
@@ -289,13 +276,6 @@
     .menuHover {
         left: 15rem;
         top: 2.2rem;
-
-        // &::after {
-        //     top: 0.7rem;
-        //     left: -2.8rem;
-        //     transform: translateY(-50%);
-        //     transform: rotate(269deg);
-        // }
     }
     .listMobile {
         display: flex;

@@ -32,8 +32,9 @@ function EditBookMice({ dataOld, toggle, reload, setreload }) {
     const CallEdit = async (data) => {
         const response = await EditBooking(data);
         if (response.status == 200) {
-            console.log(response.data);
-            toastSuccess('Edit success!')
+            toastSuccess('Edit success!');
+            toggle(false);
+
         }
         else {
             toastError('Error')
@@ -246,7 +247,6 @@ function EditBookMice({ dataOld, toggle, reload, setreload }) {
                                     <option value="2 - 3 days">2 - 3 days</option>
                                     <option value="> 3 days">{` > 3 days `}</option>
                                 </select>
-                                {/* {errsl && <span className={cx("error-message")}>Preliminary Duration cannot be empty !</span>} */}
                             </div>
                         </div>
 

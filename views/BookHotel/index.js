@@ -1,17 +1,15 @@
-import React from 'react'
-import classNames from 'classnames/bind';
 import style from '@/styles/Contact.module.scss';
-import { useController, useForm } from "react-hook-form";
-import ReCAPTCHA from 'react-google-recaptcha'
+import classNames from 'classnames/bind';
+import { useForm } from "react-hook-form";
 
-import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
-import $, { data } from 'jquery';
-import qs from 'qs';
+import ScrollToTop from '@/hook/scrollToTop';
 import { toastSuccess } from '@/hook/toastr';
 import national from '@/pages/api/national.json';
-import ScrollToTop from '@/hook/scrollToTop';
+import $ from 'jquery';
+import qs from 'qs';
 
 const cx = classNames.bind(style);
 
@@ -45,9 +43,6 @@ function Hotelbook({ click, hotel }) {
 
 
     };
-    // console.log('select', Select)
-
-    // lay ip address
     $.getJSON('https://jsonip.com/?callback=?').done(function (data) {
         var ip_address = window.JSON.parse(JSON.stringify(data, null, 2));
         ip_address = ip_address.ip;
@@ -89,12 +84,10 @@ function Hotelbook({ click, hotel }) {
                 'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
             },
         });
-        console.log(response.data)
 
         if (response.status === 200) {
-            console.log('Inquire complete!')
             toastSuccess(' Inquire complete!');
-            // console.log(Bookinfor);
+            click(false);
         } else alert('Invaild infor')
 
     };
@@ -105,7 +98,7 @@ function Hotelbook({ click, hotel }) {
             method: 'post',
             url: 'https://vnxpedia.3i.com.vn/TravelAPI/SendMailCustom',
             data: qs.stringify({
-                header: `You inquired a hotel from VNXpedia`,
+                header: `You inquired a hotel from Luxuryvietravel`,
                 content: `Hotel: ${hotel}`,
                 mail: data.Email,
             }),
@@ -328,12 +321,6 @@ function Hotelbook({ click, hotel }) {
                             <textarea
                                 placeholder="Message"
                                 className={cx("book-note")}
-                                // onChange={(e) =>
-                                //     setBookinfor({
-                                //         ...Bookinfor,
-                                //         Note: e.target.value,
-                                //     })
-                                // }
                                 {...register('Note', { required: true })}
                             ></textarea>
                             {errors.Note && errors.Note.type === 'required' && (
@@ -343,9 +330,8 @@ function Hotelbook({ click, hotel }) {
                     </div>
 
                 </div>
-                {/* <ReCAPTCHA size="normal" className={cx("re-capcha")} sitekey="<YOUR SITE KEY>" /> */}
                 <div className={cx("content-bot")}>
-                    <button className={cx("btn-send")} onClick={() => { Select ? seterrsl(false) : seterrsl(true) }}>Send Message</button>
+                    <button className={cx("btn-send")} onClick={() => { Select ? seterrsl(false) : seterrsl(true) }}>SUBMIT</button>
                 </div>
             </form>
         </div>

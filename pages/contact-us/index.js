@@ -118,26 +118,6 @@ const index = () => {
                                         <span className={cx("error-message")}>Your Name cannot be empty !</span>
                                     )}
                                 </div>
-                                {/* <div className={cx("sex")}>
-                                    <input
-                                        name="gender"
-                                        type="checkbox"
-                                        value="male"
-                                        className={cx("form-control")}
-                                    />
-                                    <label className={cx("sex-type")} for="">
-                                        MALE
-                                    </label>
-                                    <input
-                                        name="gender"
-                                        type="checkbox"
-                                        value="female"
-                                        className={cx("form-control")}
-                                    />
-                                    <label className={cx("sex-type")} for="">
-                                        FEMALE
-                                    </label>
-                                </div> */}
                             </div>
                         </div>
                         <div className={cx("item-form")}>
@@ -199,9 +179,6 @@ const index = () => {
                                 {errors.Email && errors.Email.type === 'pattern' && (
                                     <span className={cx("error-message")}>Invalid email</span>
                                 )}
-                                {/* {errors.Email && errors.Email.type === ''(
-                                <span className={cx("error-message")}>Email must match</span>
-                            )} */}
                             </div>
                         </div>
                         <div className={cx("item-form")}>
@@ -250,7 +227,6 @@ const index = () => {
                             </div>
                         </div>
                     </div>
-                    {/* <ReCAPTCHA size="normal" className={cx("re-capcha")} sitekey="<YOUR SITE KEY>" /> */}
                     <div className={cx("content-bot")}>
                         <button className={cx('btn-send')}>Send Message</button>
                     </div>

@@ -2,8 +2,6 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import style from './input.module.scss';
-
-// import DatePicker from 'react-datindex.jsepicker';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -45,7 +43,6 @@ function Input({
             setValueInput(value);
         }
     };
-    console.log(valueInput);
 
     return (
         <div className={clases}>

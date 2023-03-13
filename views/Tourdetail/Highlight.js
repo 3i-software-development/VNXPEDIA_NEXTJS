@@ -26,7 +26,6 @@ const Highlight = ({ title, destination, long, highlight, click, btn, cla, cla2 
                         <div className={cx('dot')}></div><p>{d}</p>
                     </div>
                 ))}
-                {/* {btn && <div className={cx('btn-book')} onClick={() => click(2)}><p>SHARE WITH FRIEND</p> <GiCheckMark /> </div>} */}
                 {btn && <Share />}
             </div>
         </div>

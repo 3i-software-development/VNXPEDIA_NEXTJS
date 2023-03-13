@@ -131,7 +131,6 @@ function ForgetPass() {
                         </Link >
                     </div >
                 </form >
-                {/* <ToastContainer /> */}
             </div >
 
         </div >

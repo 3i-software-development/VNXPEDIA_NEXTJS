@@ -65,6 +65,34 @@
 .main {
     padding: 5% 20%;
 }
+.sectionDiffCase {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3vw;
+    flex-wrap: wrap;
+}
+.item-card {
+    width: 24%;
+}
+.sectionDiffCase-2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.item-card-2 {
+    width: 30%;
+    flex: 1;
+    min-height: 300px;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.item-card-2:first-child {
+    margin-right: 20px;
+}
+.item-card-2:last-child {
+    margin-left: 20px;
+}
 @media only screen and (max-width: 1500px) {
     .main {
         padding: 5% 15%;
@@ -78,5 +106,21 @@
 @media only screen and (max-width: 900px) {
     .main {
         padding: 5% 5%;
+    }
+    .item-card-2 {
+        width: 48%;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .item-card {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .item-card-2 {
+        width: 70%;
+
+        display: block;
     }
 }

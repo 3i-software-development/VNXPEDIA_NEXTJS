@@ -1,120 +1,123 @@
-.container{
+.container {
     width: 100%;
 }
-.text1{
+.text1 {
     // padding: 2rem 55rem;
     text-align: center;
     line-height: 2.3rem;
 }
-.text1 p{
+.text1 p {
     color: #797979;
     font-size: 14px;
     margin: 2rem 25%;
 }
-.text2{
+.text2 {
     display: flex;
     padding: 10rem 20%;
-
 }
-.text2 .img{
+.text2 .img {
     width: 50%;
     height: 100%;
 }
-.text2 .img img{
+.text2 .img img {
     width: 100%;
     height: 100%;
 }
-.text2 .text{
+.text2 .text {
     width: 50%;
     padding-left: 7rem;
 }
-.text2 .text p{
-    color:#918f8f;
+.text2 .text p {
+    color: #918f8f;
     font-size: 14px;
 }
-.image{
+.image {
     width: 100%;
     height: 100%;
     display: flex;
     padding: 3% 18.5%;
-
 }
-.image .img1{
+.image .img1 {
     width: 30%;
-    height: 40vw;
+    height: 35vw;
 }
-.image .img1 img{
+.image .img1 img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
-.image .img2{
-    width: 30%;
-    height: 40vw;
-}
-.image .img2 img{
+// .image .img2 {
+//     width: 30%;
+//     height: 40vw;
+// }
+.image .img2 img {
     width: 100%;
     height: 100%;
     padding-left: 2rem;
 }
-.image .img3{
+.image .img3 {
     width: 30%;
-    height: 40vw;
+    height: 35vw;
+    margin-left: 2rem;
     flex: 1;
+    position: relative;
+    overflow: hidden;
 }
-.image .img3 img{
-    width: 100%;
-    height: 100%;
+.image .img3 img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    transform: scale(1.1);
 }
 @media only screen and (max-width: 1700px) {
-    .text2{
+    .text2 {
         padding: 10rem 10%;
     }
 }
 @media only screen and (max-width: 1450px) {
-    .text2{
+    .text2 {
         padding: 10rem 10%;
     }
-    .text2 .text{
+    .text2 .text {
         width: 65%;
     }
 }
 @media only screen and (max-width: 1300px) {
-    .text2{
+    .text2 {
         padding: 10rem 5%;
     }
-    .text2 .text{
+    .text2 .text {
         width: 65%;
     }
 }
 @media only screen and (max-width: 1150px) {
-    .text2{
+    .text2 {
         padding: 10rem 5%;
     }
-    .text2 .img{
+    .text2 .img {
         width: 40%;
         height: 500px;
     }
-    .text2 .text{
+    .text2 .text {
         width: 60%;
     }
-
 }
 @media only screen and (max-width: 950px) {
-    .image{
+    .image {
         padding: 3% 12%;
     }
-    .text1 p{
+    .text1 p {
         margin: 2rem 20%;
     }
-    .text2{
+    .text2 {
         margin-left: 7%;
         display: block;
     }
     .text2 .img {
         width: 90%;
     }
-    .text2 .text{
-        padding: 1rem ;
+    .text2 .text {
+        padding: 1rem;
         width: 90%;
     }
 }

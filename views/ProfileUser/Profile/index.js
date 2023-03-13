@@ -5,13 +5,13 @@ import { useForm } from "react-hook-form";
 import { TfiPencilAlt } from "react-icons/tfi";
 import style from './profile.module.scss';
 import qs from 'qs'
-import { toastSuccess } from "@/components/Toast";
-import { EditUserInfor } from "@/pages/api/QuerryAPI";
+import { toastSuccess, toastError } from "@/components/Toast";
 import { useApppContext } from "@/pages/_app";
 
 const cx = classNames.bind(style);
 
 function InfoUser({ data, setuser, dataOld }) {
+
 
     const {
         register,
@@ -21,7 +21,7 @@ function InfoUser({ data, setuser, dataOld }) {
 
     const [edit, setedit] = useState(false);
     const CT = useApppContext();
-    const [userEdit, setUserEdit] = useState(data);
+    const [userEdit, setUserEdit] = useState(CT.currentUser);
     const HandleEdit = (e) => {
         e.preventDefault()
         callApiEdit(data);
@@ -30,7 +30,7 @@ function InfoUser({ data, setuser, dataOld }) {
 
     const callApiEdit = async (data) => {
         let Newinfor = {
-            UserName: CT.UserName,
+            UserName: CT.currentUser.UserName,
             GivenName: userEdit.FullName == '' ? data.FullName : userEdit.FullName,
             Gender: userEdit.Gender,
             Reason: userEdit.BirthDay == '' ? data.BirthDay : userEdit.BirthDay,
@@ -47,20 +47,18 @@ function InfoUser({ data, setuser, dataOld }) {
                 'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
             },
         });
+
         if (response.data.Error === true) {
             toastError('Error!');
         } else {
             toastSuccess('Successfully changed information.');
             localStorage.setItem('VNXUser', JSON.stringify({ ...data, FullName: Newinfor.GivenName, Gender: Newinfor.Gender, BirthDay: Newinfor.Reason, About: Newinfor.Description, Address: Newinfor.Note, PhoneNumber: Newinfor.PhoneNumber, Email: Newinfor.Email }));
             setuser({ ...data, FullName: Newinfor.GivenName, Gender: Newinfor.Gender, BirthDay: Newinfor.Reason, About: Newinfor.Description, Address: Newinfor.Note, PhoneNumber: Newinfor.PhoneNumber, Email: Newinfor.Email });
-            // setCurrentUser({
-            //     ...Useredit,
-            //     ...data,
-            // });
+
         }
     };
 
-    const Edit = EditUserInfor();
+
 
 
     return (

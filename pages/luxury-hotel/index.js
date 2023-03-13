@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import classNames from 'classnames/bind';
-import { Section, Title, Pagination } from '@/components';
-import { BannerSlide, CategoryFilter } from '@/views';
-import { banners } from '@/public/images';
-import { useRouter } from "next/router";
-import Hotelcard from '@/views/HotelCard/Hotelcard';
-import { categoryFillerAddress } from '@/public/dataRender';
-import style from '@/styles/luxuryhotel.module.scss';
-import { ListHotel } from '../api/QuerryAPI';
-import Loading from '@/components/Loading';
+import { Pagination } from '@/components';
 import Headpage from '@/components/Head/head';
+import Loading from '@/components/Loading';
+import { categoryFillerAddress } from '@/public/dataRender';
+import { banners } from '@/public/images';
+import style from '@/styles/luxuryhotel.module.scss';
+import { CategoryFilter } from '@/views';
+import BannerIMG from '@/views/BannerSlide/BannerIMG';
+import Hotelcard from '@/views/HotelCard/Hotelcard';
+import classNames from 'classnames/bind';
+import { useRouter } from "next/router";
+import { useState } from 'react';
+import { ListHotel } from '../api/QuerryAPI';
 
 
 const cx = classNames.bind(style);
@@ -30,8 +31,7 @@ const index = () => {
     return (
         <div className={cx('wrapper')}>
             <Headpage />
-            <BannerSlide imgBanner={[banners.resolt]} className={cx('bannerBody')} classNameTitle={cx('titleBanner')} titleBanner={"Luxury hotel"} textBottom={"Best luxury hotel in Vietnam and Asia"} />
-
+            <BannerIMG img={banners.hotel} title={'LUXURY HOTEL'} descrip={'Best luxury hotel in Viet Nam and Asia'} />
             <div className={cx('main')}>
                 {hotelList.isLoading && <Loading />}
                 {hotelList.data &&

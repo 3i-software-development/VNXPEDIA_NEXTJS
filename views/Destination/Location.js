@@ -25,7 +25,7 @@ const Location = () => {
     return (
         <div className={cx('container')}>
             <br />
-            <h2 className={cx('tag')}>SOUTH EAST&MEKONG RIVER DELTA</h2>
+            <h1 className={cx('tag')}>SOUTH EAST&MEKONG RIVER DELTA</h1>
 
             {Localist.length > 0 && (
                 <div className={cx('cl')}>
@@ -48,9 +48,9 @@ const Location = () => {
                 </div>
             )}
             <br />
-            <h2 className={cx('tag')}>SOUTH CENTRAL COAST</h2>
+            <h1 className={cx('tag')}>SOUTH CENTRAL COAST</h1>
             {Localist.length > 0 && (
-                <div className={cx('title-card')}>
+                <div className={cx('cl')}>
                     {Localist.filter((f) => f.hash_tag.includes('SOUTH_CENTRAL_COAST')).map((d, i) => (
                         <div className={cx('cl-item')} key={i}>
                             <div className={cx('img')}>
@@ -70,10 +70,10 @@ const Location = () => {
                 </div>
             )}
             <br />
-            <h2 className={cx('tag')}>NORTH CENTRAL COAST</h2>
+            <h1 className={cx('tag')}>NORTH CENTRAL COAST</h1>
 
             {Localist.length > 0 && (
-                <div className={cx('title-card')}>
+                <div className={cx('cl')}>
                     {Localist.filter((f) => f.hash_tag.includes('NORTH_CENTRAL_COAST')).map((d, i) => (
                         <div className={cx('cl-item')} key={i}>
                             <div className={cx('img')}>
@@ -94,10 +94,10 @@ const Location = () => {
             )}
 
             <br />
-            <h2 className={cx('tag')}>RED RIVER DELTA</h2>
+            <h1 className={cx('tag')}>RED RIVER DELTA</h1>
 
             {Localist.length > 0 && (
-                <div className={cx('title-card')}>
+                <div className={cx('cl')}>
                     {Localist.filter((f) => f.hash_tag.includes('RED_RIVER_DELTA')).map((d, i) => (
                         <div className={cx('cl-item')} key={i}>
                             <div className={cx('img')}>
@@ -118,10 +118,10 @@ const Location = () => {
             )}
 
             <br />
-            <h2 className={cx('tag')}>NORTH WEST</h2>
+            <h1 className={cx('tag')}>NORTH WEST</h1>
 
             {Localist.length > 0 && (
-                <div className={cx('title-card')}>
+                <div className={cx('cl')}>
                     {Localist.filter((f) => f.hash_tag.includes('NORTH_WEST')).map((d, i) => (
                         <div className={cx('cl-item')} key={i}>
                             <p className={cx('h3')}>

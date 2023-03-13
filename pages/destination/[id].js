@@ -115,7 +115,7 @@ function Destimation() {
             {router.query.id && <BannerIMG img={banners.resolt} title={(router.query.id).split('dest')[0]} bg='bg' descrip='Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content' />}
             <div className={cx('list-menu')} id='list'>
                 {listmenu.map((d, i) =>
-                    <p className={cx(act[i])} onClick={() => Pickmenu(i)}>{d}</p>
+                    <p className={cx(act[i])} onClick={() => Pickmenu(i)} key={i}>{d}</p>
                 )}
 
             </div>
@@ -149,7 +149,7 @@ function Destimation() {
                             </div>
                             <div className={cx('tour-list')}>
                                 {sortp(tourList.data).slice(firstIndex, lastIndex).map((d, i) =>
-                                    <Tourcard2 data={d} />
+                                    <Tourcard2 data={d} key={i} />
                                 )}
                             </div>
                             {tourList.data && tourList.data.length == 0 && <p>Not result</p>}

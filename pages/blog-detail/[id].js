@@ -64,44 +64,39 @@ const BlogDetail = () => {
     const Blogcomment = GetComment(router.query.id, loadcm)
 
 
-    if (BlogDetail.isLoading) {
-        return <Loading />;
-    }
 
-    if (BlogDetail.error) {
-        return <p>Error: {error.message}</p>;
-    }
 
     return (
         <div className={cx('container')}>
             <Headpage />
-
+            {BlogDetail.isLoading && <Loading />}
             {BlogDetail.data && <BannerIMG img={IMGbn} title={BlogDetail.data.Object[0].title.toUpperCase()} bg='bg' type={datafake.type} color='black' date={datafake.date} by={datafake.author} number={datafake.comments.length} />}
 
-            <div className={cx('main')} >
+            {BlogDetail.data &&
+                <div className={cx('main')} >
 
 
 
-                <div className={cx('main-top')}>
-                    <div className={cx('author')}>
-                        <Author />
+                    <div className={cx('main-top')}>
+                        <div className={cx('author')}>
+                            <Author />
+                        </div>
+
+                        <div className={cx('content')} dangerouslySetInnerHTML={{ __html: BlogDetail.data.Object[0].full_text }}></div>
                     </div>
 
-                    <div className={cx('content')} dangerouslySetInnerHTML={{ __html: BlogDetail.data.Object[0].full_text }}></div>
+                    <div className={cx('main-bot')}>
+
+                        <Listtag data={BlogDetail.data.Object[0].hash_tag} />
+
+                    </div>
+
+                    <div className={cx('comment-container')}>
+                        {router.query.id && <Comments id={router.query.id} setrepid={setrepid} setrepname={setrepname} />}
+                        <WriteComment id={router.query.id} prid={repid} repname={repname} setrepid={setrepid} />
+                    </div>
                 </div>
-
-                <div className={cx('main-bot')}>
-
-                    <Listtag data={BlogDetail.data.Object[0].hash_tag} />
-
-                </div>
-
-                <div className={cx('comment-container')}>
-                    {router.query.id && <Comments id={router.query.id} setrepid={setrepid} setrepname={setrepname} loadcm={loadcm} />}
-                    <WriteComment id={router.query.id} prid={repid} loadcm={loadcm} repname={repname} setrepid={setrepid} refet={setloadcm} />
-                </div>
-            </div>)
-
+            }
             <Blogrecomment />
         </div >
     )

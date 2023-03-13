@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import classNames from 'classnames/bind';
-import style from '@/styles/casetudy.module.scss';
-import Image from 'next/image';
 import { Title } from '@/components';
 import ChangeTextHTML from '@/hook/ChangetextHTML';
+import style from '@/styles/casetudy.module.scss';
+import classNames from 'classnames/bind';
+import Image from 'next/image';
 import { GoPrimitiveDot } from 'react-icons/go';
 
 const cx = classNames.bind(style);
@@ -16,7 +15,7 @@ const Highlight = ({ data }) => {
                 <div className={cx('top-hl')}>
                     <Title className={cx('title')} text='Tour Highlight' />
                     {ChangeTextHTML(data.Hightlight).map((d, i) =>
-                        <p className={cx('p-hl')}><GoPrimitiveDot />{d}</p>
+                        <p className={cx('p-hl')} key={i} ><GoPrimitiveDot />{d}</p>
                     )}
                 </div>
             </div>

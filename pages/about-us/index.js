@@ -11,6 +11,8 @@ import History from '@/views/Aboutus/History';
 import AboutVideo from '@/views/Aboutus/Video';
 import BannerIMG from '@/views/BannerSlide/BannerIMG';
 import Headpage from '@/components/Head/head';
+import Background from '@/views/Background/Background';
+import BnImg from '@/public/bn9.jpg';
 
 
 import Image from 'next/image';
@@ -23,29 +25,29 @@ const index = () => {
         <>
             <Headpage data='about us luxuryvietravel' />
             <div className={cx('wrapperBanner')}>
-                <BannerIMG bg='bg' title={"about vnxpedia"} descrip={"The tours featured throughout our website are intended to give you ideas for whats possible when you travel with us. Treat them simply as inspiration"} img={banners.banner4} crumb={{ title: 'About' }} crumbStyle2 />
+                <BannerIMG bg='bg' title={"about Luxuryvietravel"} descrip={"The tours featured throughout our website are intended to give you ideas for whats possible when you travel with us. Treat them simply as inspiration"} img={banners.banner4} crumb={{ title: 'About' }} crumbStyle2 />
                 <div className={cx('boxInfo')}>
                     <div className={cx('box')}>
                         <div className={cx('icon')} >
-                            < Image src={icon1} />
+                            <Image src={icon1} alt='icon' />
                         </div>
                         <h2>Address</h2>
 
-                        <p>210 Trung Kinh street, Cau Giay district,Hanoi, Vietnam</p>
+                        <p>4, Road 10B, Trung Yen, Cau Giay District, Hanoi, 10000</p>
 
                     </div>
                     <div className={cx('box')}>
                         <div className={cx('icon')}>
-                            < Image src={icon2} />
+                            <Image src={icon2} alt='icon' />
                         </div>
                         <h2>Email Address</h2>
 
-                        <p>info@vnxpedia.com - sale@vnxpedia.com</p>
+                        <p>info@luxuryvietravel.com - sale@luxuryvietravel.com</p>
 
                     </div>
                     <div className={cx('box')}>
                         <div className={cx('icon')}>
-                            < Image src={icon3} />
+                            <Image src={icon3} alt='icon' />
                         </div>
                         <h2>Contacts info</h2>
                         <p>+ 84 901591111</p>
@@ -54,7 +56,8 @@ const index = () => {
 
             </div>
             <History />
-            <AboutVideo />
+            {/* <AboutVideo /> */}
+            <Background img={BnImg} />
             <div id='this' ></div>
             <Section notPadding>
                 <OutTeamAboutUs />

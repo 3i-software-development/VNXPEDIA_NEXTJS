@@ -37,12 +37,12 @@ function Footer() {
             <div className={cx('footer')}>
                 <div className={cx('list-logo')}>
 
-                    <Image src={Img1} className={cx('img')} alt="logo-prize-vnxpedia" />
-                    <Image src={Img2} className={cx('img-mini')} alt="logo-prize-vnxpedia" />
-                    <Image src={Img3} className={cx('img')} alt="logo-prize-vnxpedia" />
-                    <Image src={Img4} className={cx('img')} alt="logo-prize-vnxpedia" />
-                    <Image src={Img5} className={cx('img')} alt="logo-prize-vnxpedia" />
-                    <Image src={Img6} className={cx('img-mini')} alt="logo-prize-vnxpedia" />
+                    <Image src={Img1} className={cx('img')} alt="logo-prize-Luxuryvietravel" />
+                    <Image src={Img2} className={cx('img-mini')} alt="logo-prize-Luxuryvietravel" />
+                    <Image src={Img3} className={cx('img')} alt="logo-prize-Luxuryvietravel" />
+                    <Image src={Img4} className={cx('img')} alt="logo-prize-Luxuryvietravel" />
+                    <Image src={Img5} className={cx('img')} alt="logo-prize-Luxuryvietravel" />
+                    <Image src={Img6} className={cx('img-mini')} alt="logo-prize-Luxuryvietravel" />
                 </div>
                 <hr className={cx('hr')} />
                 <div className={cx('main')}>
@@ -50,7 +50,7 @@ function Footer() {
                         <div className={cx('main-left')}>
                             <div className={cx('infor')}>
 
-                                <Image src={Logo} className={cx('logo-img')} alt="logo-VNXpedia" />
+                                <Image src={Logo} className={cx('logo-img')} alt="logo-Luxuryvietravel" />
                                 <div className={cx('infor-bot')}>
                                     <div className={cx('phone')}>
                                         <GiPhone />
@@ -61,9 +61,9 @@ function Footer() {
                                         <div>info@luxuryvietravel.com</div>
                                     </div>
                                     <div className={cx('icon')}>
-                                        <div className={cx('item-icon')}>
+                                        <Link href='https://www.facebook.com/profile.php?id=100090618182366' className={cx('item-icon')}>
                                             <GrFacebookOption />
-                                        </div>
+                                        </Link>
                                         <div className={cx('item-icon')}>
                                             <TiSocialInstagram />
                                         </div>
@@ -88,7 +88,7 @@ function Footer() {
                                 <div className={cx('list')}>
                                     <div className={cx('title')}>AS TOUR OPERATOR</div>
                                     <Link href='/about-us'>Why travel with us</Link>
-                                    <Link href='/about-us#this' >Meat VNXpedia team</Link>
+                                    <Link href='/about-us#this' >Meat Luxuryvietravel team</Link>
 
                                     <Link href='/responsible'>Responsible Travel</Link>
                                     <Link href='/payment/conditions'>Terms & Conditions</Link>
@@ -114,7 +114,7 @@ function Footer() {
                     <div className={cx('end')}>
                         <div className={cx('end-left')}>
                             <BiCopyright />
-                            <div>Copyright 2019 VNXpedia</div>
+                            <div>Copyright 2019 Luxuryvietravel</div>
                         </div>
                         <div>All Rights Reserved</div>
                     </div>

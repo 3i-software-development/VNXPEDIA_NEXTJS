@@ -12,9 +12,9 @@ const cx = classNames.bind(style);
 const Share = () => {
     return (
         <div className={cx('container')}>
-            <Link href={'https://www.facebook.com/sharer/sharer.php?u=${window.location.href}'} target="_blank"><SlSocialFacebook /></Link>
-            <Link href={'https://twitter.com/intent/tweet?url=${window.location.href}&text='} target="_blank"><CiTwitter /></Link>
-            <Link href={'https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}'} target="_blank"><FaLinkedin /></Link>
+            <Link href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} target="_blank"><SlSocialFacebook /></Link>
+            <Link href={`https://twitter.com/intent/tweet?url=${window.location.href}&text=`} target="_blank"><CiTwitter /></Link>
+            <Link href={`https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}`} target="_blank"><FaLinkedin /></Link>
 
         </div>
     )

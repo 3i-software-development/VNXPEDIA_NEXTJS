@@ -1,10 +1,8 @@
 import style from '@/styles/Contact.module.scss';
 import classNames from 'classnames/bind';
 import { useForm } from "react-hook-form";
-
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
 import { toastSuccess } from '@/hook/toastr';
 import $ from 'jquery';
 import qs from 'qs';
@@ -59,7 +57,6 @@ function Transferbook({ click, transfer }) {
     }, [])
 
     const callApi = async (data) => {
-        console.log(data);
         const response = await axios({
             method: 'post',
             url: 'https://vnxpedia.3i.com.vn/TravelAPI/InsertBooking',
@@ -85,13 +82,12 @@ function Transferbook({ click, transfer }) {
                 'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
             },
         });
-        console.log(response.data)
+
 
         if (response.status === 200) {
-            console.log('Inquire complete!')
             toastSuccess(' Inquire complete!');
             callApiSendmail(data);
-            // console.log(Bookinfor);
+            click(false);
         } else alert('Invaild infor')
 
     };
@@ -99,18 +95,6 @@ function Transferbook({ click, transfer }) {
 
     const callApiSendmail = async (data) => {
         const response = await Sendmail(transfer, data.email)
-        //     {
-        //     method: 'post',
-        //     url: 'https://vnxpedia.3i.com.vn/TravelAPI/SendMailCustom',
-        //     data: qs.stringify({
-        //         header: `You inquired a hotel from VNXpedia`,
-        //         content: `Hotel: ${transfer}`,
-        //         mail: data.Email,
-        //     }),
-        //     headers: {
-        //         'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-        //     },
-        // }
 
     };
 
@@ -159,26 +143,6 @@ function Transferbook({ click, transfer }) {
                                     <span className={cx("error-message")}>Your Name cannot be empty !</span>
                                 )}
                             </div>
-                            {/* <div className={cx("sex")}>
-                                <input
-                                    name="gender"
-                                    type="checkbox"
-                                    value="male"
-                                    className={cx("form-control")}
-                                />
-                                <label className={cx("sex-m")} for="">
-                                    MALE
-                                </label>
-                                <input
-                                    name="gender"
-                                    type="checkbox"
-                                    value="female"
-                                    className={cx("form-control")}
-                                />
-                                <label className={cx("sex-m")} for="">
-                                    FEMALE
-                                </label>
-                            </div> */}
                         </div>
                     </div>
                     <div className={cx("item-form")}>
@@ -192,7 +156,6 @@ function Transferbook({ click, transfer }) {
                                     <option key={d.code} value={d.code}>{d.name}</option>
                                 ))}
                             </select>
-                            {/* {errsl && <span className={cx("error-message")}>Country cannot be empty !</span>} */}
                         </div>
                     </div>
                     <div className={cx("item-form")}>
@@ -306,16 +269,11 @@ function Transferbook({ click, transfer }) {
                         </label>
                         <div>
                             <select name='Babycartseat' className={cx("our-services")}
-                                //  ref={register({ required: true })}
                                 onChange={(e) => setBaby(e.target.value)}>
                                 <option value="0" label="-- Select --" selected="selected">Select</option>
                                 <option value="Yes" label="Yes">Yes</option>
                                 <option value="No" label="No">No</option>
                             </select>
-                            {/* {errsl && <span className={cx("error-message")}> Baby car seat: cannot be empty !</span>} */}
-                            {/* {errors.Babycartseat && errors.Babycartseat.type === 'required' && (
-                                <span className={cx("error-message")}>Babycart seat cannot be empty !</span>
-                            )} */}
                         </div>
                     </div>
                     <div className={cx("item-form")}>
@@ -344,10 +302,10 @@ function Transferbook({ click, transfer }) {
                                             type="text"
                                             placeholder="Enter your number of children"
                                             className={cx("cus-children")}
-                                            {...register('children', { required: true })}
+                                            {...register('Children', { required: true })}
                                         /><br />
-                                        {errors.children && errors.children.type === 'required' && (
-                                            <span className={cx("error-message")}>children Off cannot be empty !</span>
+                                        {errors.Children && errors.Children.type === 'required' && (
+                                            <span className={cx("error-message")}>Children cannot be empty !</span>
                                         )}
                                     </div>
                                 </div>
@@ -373,7 +331,7 @@ function Transferbook({ click, transfer }) {
 
                 </div>
                 <div className={cx("content-bot")}>
-                    <button className={cx("btn-send")} >Send Message</button>
+                    <button className={cx("btn-send")} >SUBMIT</button>
                 </div>
             </form>
         </div>

@@ -14,7 +14,7 @@ const cx = classNames.bind(style);
 const BannerIMG = ({ img, title, descrip, bg, type, date, by, number, crumb, crumbStyle2, className }) => {
     return (
         <div className={cx('container', { [className]: className })}>
-            <Image src={img} alt='img tour vnxpedia' className={cx('img')} layout="fill" />
+            <Image src={img} alt='img tour Luxuryvietravel' className={cx('img')} layout="fill" loading='eager'></Image>
             <div className={cx('text-img')} id={bg}>
                 {type && <TitleLine text={type} color='black' />}
                 <h1>{title}</h1>

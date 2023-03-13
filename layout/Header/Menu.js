@@ -3,10 +3,9 @@ import Link from 'next/link';
 import classNames from 'classnames/bind';
 import style from './header.module.scss';
 
-import MenuHover from './MenuHover';
 import { useState } from 'react';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
-import OutsideClickHandler from 'react-outside-click-handler';
+import MenuHover from './MenuHover';
 
 const cx = classNames.bind(style);
 
@@ -146,7 +145,7 @@ function Menu({ className, showmenu, menuBgr, close }) {
 
                     <div className={cx('listMobileDiv')}>
                         {menuDes.map((d, i) =>
-                            <Link href={d.to} className={cx('linkMobile')} onClick={() => CloseAll()}>{d.title}</Link>
+                            <Link href={d.to} className={cx('linkMobile')} onClick={() => CloseAll()} key={i}>{d.title}</Link>
                         )}
 
                     </div>
@@ -162,13 +161,13 @@ function Menu({ className, showmenu, menuBgr, close }) {
                     <p className={cx('listMobile-1')} onClick={() => showList5 ? setshow5(false) : setshow5(true)}>Luxury tour <MdOutlineKeyboardArrowDown /></p>
                     {showList5 && <div className={cx('listMobileDiv')}>
                         {menuWayTravel[0].children.data.map((d, i) =>
-                            <Link href={d.to} className={cx('linkMobile')} onClick={() => CloseAll()}>{d.title}</Link>
+                            <Link href={d.to} className={cx('linkMobile')} onClick={() => CloseAll()} key={i}>{d.title}</Link>
                         )}
 
                     </div>
                     }
                     {menuWayTravel.slice(1, 4).map((d, i) =>
-                        <Link href={d.to} className={cx('linkMobile')} onClick={() => CloseAll()}>{d.title}</Link>
+                        <Link href={d.to} className={cx('linkMobile')} onClick={() => CloseAll()} key={i}>{d.title}</Link>
                     )}
                 </div>
                 }
@@ -183,7 +182,7 @@ function Menu({ className, showmenu, menuBgr, close }) {
 
                     <div className={cx('listMobileDiv')}>
                         {menuAbouUs.map((d, i) =>
-                            <Link href={d.to} className={cx('linkMobile')} onClick={() => CloseAll()}>{d.title}</Link>
+                            <Link href={d.to} className={cx('linkMobile')} onClick={() => CloseAll()} key={i}>{d.title}</Link>
                         )}
 
                     </div>

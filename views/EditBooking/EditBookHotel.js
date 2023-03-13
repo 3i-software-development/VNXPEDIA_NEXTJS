@@ -1,14 +1,12 @@
-import React from 'react'
-import classNames from 'classnames/bind';
-import style from '@/styles/Contact.module.scss';
+import { toastError, toastSuccess } from "@/components/Toast";
 import ScrollToTop from '@/hook/scrollToTop';
+import { EditBooking } from "@/pages/api/CallAPI";
+import national from '@/pages/api/national.json';
+import style from '@/styles/Contact.module.scss';
+import classNames from 'classnames/bind';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
-import national from '@/pages/api/national.json';
-import Link from "next/link";
 import { AiFillCloseCircle } from 'react-icons/ai';
-import { EditBooking } from "@/pages/api/CallAPI";
-import { toastSuccess, toastError } from "@/components/Toast";
 
 const cx = classNames.bind(style);
 
@@ -28,7 +26,8 @@ function EditBookHotel({ dataOld, toggle, reload, setreload }) {
     const CallEdit = async (data) => {
         const response = await EditBooking(data);
         if (response.status == 200) {
-            toastSuccess('Edit Success!')
+            toastSuccess('Edit Success!');
+            toggle(false);
         }
         else {
             toastError('Error')
@@ -213,9 +212,8 @@ function EditBookHotel({ dataOld, toggle, reload, setreload }) {
                     </div>
 
                 </div>
-                {/* <ReCAPTCHA size="normal" className={cx("re-capcha")} sitekey="<YOUR SITE KEY>" /> */}
                 <div className={cx("content-bot")}>
-                    <button className={cx("btn-send")} >Send Message</button>
+                    <button className={cx("btn-send")} >SUBMIT</button>
                 </div>
             </form>
         </div>

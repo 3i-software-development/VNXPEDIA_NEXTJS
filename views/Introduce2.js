@@ -12,11 +12,11 @@ const Introduce2 = () => {
             <Image src={gt2} className={cx('img')} alt='img-Introduce' />
 
             <div className={cx('h2')}>
-                <h2> WE OFFER LUXURY PRIVATE TOURS TO SOUTHREAST ASIA</h2>
+                <h2> WE OFFER LUXURY PRIVATE TOURS TO SOUTHEAST ASIA</h2>
             </div>
             <div className={cx('text')}>
                 <p>
-                    <span>VNXpedia </span>specializes in <span>Private Tours & Tailor-Made Holiday Packages</span> by
+                    <span>Luxuryvietravel </span>specializes in <span>Private Tours & Tailor-Made Holiday Packages</span> by
                     Inside Travel Experts.
                     <br /> We are proudly the Best Inside Travel DMCs & Tour Operators in each destination where you
                     travel to, our local professional team is always by your side & take care of your trip from start to

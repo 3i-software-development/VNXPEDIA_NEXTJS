@@ -8,9 +8,11 @@ import { BiVideo } from 'react-icons/bi';
 const cx = classNames.bind(style);
 
 const AboutVideo = () => {
+
     return (
         <div className={cx('video')}>
             <Image src={IMG} alt='videoAbout' />
+
             <div className={cx('video-button')}>
                 <BiVideo />
                 <p>WATCH VIDEO</p>

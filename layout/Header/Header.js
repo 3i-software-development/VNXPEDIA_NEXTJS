@@ -4,23 +4,21 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 import style from './header.module.scss';
 
-import { Button } from '@/components';
-import { images } from '@/public/images';
 import Logo from '@/asset/images/LogoFN1.png';
+import { Button } from '@/components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Menu from './Menu';
 
 import LogIn from '@/components/Login';
 import Signup from '@/components/SignUp';
+import { useApppContext } from '@/pages/_app';
+import Img1 from '@/public/icon/Layer15.png';
 import Searchkey from '@/views/Searchkey/Searchkey';
 import { AiOutlineMenu, AiOutlineSearch, AiOutlineUser } from 'react-icons/ai';
 import { FiUserCheck } from 'react-icons/fi';
-import { MdGTranslate } from 'react-icons/md';
 import OutsideClickHandler from 'react-outside-click-handler';
 import { ToastContainer } from 'react-toastify';
-import Img1 from '@/public/icon/Layer15.png';
-import { useApppContext } from '@/pages/_app';
 
 
 const cx = classNames.bind(style);
@@ -34,7 +32,6 @@ const Header = () => {
     const [signup, setsignup] = useState(false);
     const [login, setlogin] = useState(false)
     const [translate, settranslate] = useState('none');
-    // const [currentUser, setCurrentUser] = useState(null);
     const { asPath } = useRouter();
     const router = useRouter();
     const [closeUser, setCloseUser] = useState(false)
@@ -88,9 +85,8 @@ const Header = () => {
                     <OutsideClickHandler onOutsideClick={() => settranslate('none')}>
                         <div className={cx('gg-trans')}>
                             <Image src={Img1} className={cx('icon', { active: translate })} onClick={() => translate == 'none' ? settranslate('block') : settranslate('none')} alt='icon-language' />
-                            {/* <MdGTranslate className={cx('icon', { active: translate })} onClick={() => translate == 'none' ? settranslate('block') : settranslate('none')} /> */}
-                            <div className={cx('sl-trans')} style={{ display: translate }}>
-                                <div id="google_translate_element" ></div>
+                            <div className={cx('sl-trans')} style={{ display: translate }} >
+                                <div id="google_translate_element"></div>
                             </div>
                         </div>
                     </OutsideClickHandler>
@@ -119,7 +115,7 @@ const Header = () => {
                         <div className={cx('search-icon')}>
                             <AiOutlineSearch className={cx('icon', { active: showSearch })} onClick={() => showSearch ? setShowSearch(false) : setShowSearch(true)} />
                         </div>
-                        {showSearch && <Searchkey />}
+                        {showSearch && <Searchkey close={setShowSearch} />}
                     </OutsideClickHandler>
                     <AiOutlineMenu className={cx('icon', 'menuIcon', { active: showMenu })} onClick={handelShowMenu} />
                     <div className={cx('button-call')} >
@@ -134,5 +130,3 @@ const Header = () => {
 };
 
 export default Header;
-
-//how to center div

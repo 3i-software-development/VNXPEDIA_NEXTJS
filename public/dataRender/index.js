@@ -6,25 +6,26 @@ const infoHomeFake = [
         icon: iconInfos.icon1,
         title: `excellent <br/>services`,
         content:
-            'The tours featured throughout our website are intended to give you ideas for whats possible when you travel with us. Treat them simply as inspiration',
+            `We know Flipper lives in a world full of wonder flying there-under under the sea. Come and play. Everything's A-OK.`,
     },
     {
         icon: iconInfos.icon4,
         title: 'local experts',
         content:
-            'The tours featured throughout our website are intended to give you ideas for whats possible when you travel with us. Treat them simply as inspiration',
+            `Friendly neighbors there that's where we meet. Can you tell me how to get how to get to Sesame Street.`,
     },
     {
         icon: iconInfos.icon7,
         title: 'local price',
         content:
-            'The tours featured throughout our website are intended to give you ideas for whats possible when you travel with us. Treat them simply as inspiration',
+            `Give us any chance well take it. Give us any rule we'll break it. We're gonna make our dreams come true.`,
     },
     {
         icon: iconInfos.icon3,
         title: 'authentic <br/>& tailor-made tours',
         content:
-            'The tours featured throughout our website are intended to give you ideas for whats possible when you travel with us. Treat them simply as inspiration',
+            `There's nothing can hold me when I hold you. Feels so right it 
+            cant be wrong. Rockin'`,
     },
 ];
 

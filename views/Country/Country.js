@@ -15,18 +15,6 @@ const cx = classNames.bind(style);
 
 const Country = () => {
     const { data, isLoading, error } = GetAllCountry();
-    // const [Data, setdata] = useState();
-    // const CallAPI = async () => {
-    //     const response = await AllCountry();
-    //     if (response.status == 200) {
-    //         setdata(response.data);
-    //     }
-    // }
-    // useEffect(() => {
-
-    //     CallAPI();
-    // }, []);
-    // console.log(Data);
     if (isLoading) {
         return <p>Loading...</p>;
     }

@@ -5,9 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 const cx = classNames.bind(style)
 
-function BoxImageMice({ title, des, img, size, minWidth }) {
+function BoxImageMice({ id, title, des, img, size, minWidth }) {
     return (
-        <Link href={`/case-study/MICE001`} className={cx('boxImageMice')} style={{ width: size, minWidth: minWidth }}>
+        <Link href={`/case-study/${id}`} className={cx('boxImageMice')} style={{ width: size, minWidth: minWidth }}>
             <div className={cx('boxImg')}>
                 <Image src={img} alt='boxImage' className={cx('img')} width='1000' height='1000' />
             </div>

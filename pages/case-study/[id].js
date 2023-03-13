@@ -16,7 +16,7 @@ const cx = classNames.bind(style);
 
 const Data = {
     Img: '',
-    Infor: [`Time: May 2017 `, `Number of pax: 150`, `Venue: Mui Ne - Phan Thiet`, `Organizer: VNXPEDIA`],
+    Infor: [`Time: May 2017 `, `Number of pax: 150`, `Venue: Mui Ne - Phan Thiet`, `Organizer: Luxuryvietravel`],
     Inclusions: ['Food for 150 pax', 'Table and chair', 'Service proesinal staff', 'Drink', 'Decoration', 'Cleaning Service'],
     Exclusions: ['Food not in menu', 'Tip money for staff', 'Wine and alcoho', 'Tip money for staff', 'Tip money for staff', 'Tip money for staff'],
     hash_tag: "[\"#BBQ Party\",\"#Phan Thiet \",\"#Dailytour\"]"
@@ -29,29 +29,22 @@ const index = () => {
     const caseStudy = Gettour(router.query.id);
 
 
-    if (caseStudy.isLoading) {
-        return <p>Loading...</p>;
-    }
-
-    if (caseStudy.error) {
-        return <p>Error: {error.message}</p>;
-    }
 
 
     return (
         <div className={cx('container')}>
             <Headpage />
-            <div className={cx('main')}>
-                {(caseStudy.data.Object[0] && caseStudy.data.Object[0].BannerImg && caseStudy.data.Object[0].HightlightImg) ?
-                    <BannerIMG img={`https://vnxpedia.3i.com.vn${caseStudy.data.Object[0].BannerImg}`} title={caseStudy.data.Object[0].TourName} bg='bg' descrip={ChangeTextHTML(caseStudy.data.Object[0].TourDescription)} /> :
-                    <BannerIMG img={`https://vnxpedia.3i.com.vn${caseStudy.data.Object[0].HightlightImg}`} title={caseStudy.data.Object[0].TourName} bg='bg' descrip={ChangeTextHTML(caseStudy.data.Object[0].TourDescription)} />
+            {caseStudy.data && <div className={cx('main')}>
+                {(caseStudy.data && caseStudy.data.BannerImg && caseStudy.data.HightlightImg) ?
+                    <BannerIMG img={`https://vnxpedia.3i.com.vn${caseStudy.data.BannerImg}`} title={caseStudy.data.TourName} bg='bg' descrip={ChangeTextHTML(caseStudy.data.TourDescription)} /> :
+                    <BannerIMG img={`https://vnxpedia.3i.com.vn${caseStudy.data.HightlightImg}`} title={caseStudy.data.TourName} bg='bg' descrip={ChangeTextHTML(caseStudy.data.TourDescription)} />
                 }
 
 
                 {Book ?
                     <div className={cx('main-infor')}>
 
-                        {caseStudy.data.Object[0] && <Highlight data={caseStudy.data.Object[0]} />}
+                        {caseStudy.data && <Highlight data={caseStudy.data} />}
                         <InEx data={Data.Inclusions} type='inc' />
                         <InEx data={Data.Exclusions} type='exc' />
 
@@ -69,7 +62,7 @@ const index = () => {
 
 
             </div>
-
+            }
         </div>
     )
 }

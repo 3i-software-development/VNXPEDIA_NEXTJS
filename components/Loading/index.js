@@ -1,10 +1,7 @@
-import React from 'react'
-import style from './Loading.module.scss';
 import classNames from "classnames/bind";
-import { Vortex } from 'react-loader-spinner';
-import logo from '@/public/images/logos/logo-w-2.png'
-import Image from 'next/image';
 import { TiTick } from 'react-icons/ti';
+import { Vortex } from 'react-loader-spinner';
+import style from './Loading.module.scss';
 
 
 const cx = classNames.bind(style);
@@ -12,7 +9,6 @@ const cx = classNames.bind(style);
 const Loading = () => {
     return (
         <div className={cx('container')}>
-            {/* <Image src={logo} /> */}
             <div>
                 <Vortex
                     visible={true}

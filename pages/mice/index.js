@@ -1,27 +1,21 @@
-import classNames from 'classnames/bind';
 import style from '@/styles/mice.module.scss';
-
-import { Section, Button } from '@/components';
-// import { BannerSlide } from '@/views';
-//import { banners } from '@/public/images';
+import classNames from 'classnames/bind';
+import Headpage from '@/components/Head/head';
+import ChangeTextHTML from '@/hook/ChangetextHTML';
+import Img1 from '@/public/images/Layer69.png';
+import Img2 from '@/public/images/Layer70.png';
+import Img3 from '@/public/images/Layer71.png';
+import Img4 from '@/public/images/Layer72.png';
+import Img5 from '@/public/images/Layer73.png';
+import Img6 from '@/public/images/Layer74.png';
+import Img7 from '@/public/images/Layer75.png';
+import Img8 from '@/public/images/Layer76.png';
+import Img11 from '@/public/images/Layer79.png';
 import BannerIMG from '@/views/BannerSlide/BannerIMG';
-import Img1 from '@/public/images/Layer69.png'
-import Img2 from '@/public/images/Layer70.png'
-import Img3 from '@/public/images/Layer71.png'
-import Img4 from '@/public/images/Layer72.png'
-import Img5 from '@/public/images/Layer73.png'
-import Img6 from '@/public/images/Layer74.png'
-import Img7 from '@/public/images/Layer75.png'
-import Img8 from '@/public/images/Layer76.png'
-import Img9 from '@/public/images/Layer77.png'
-import Img10 from '@/public/images/Layer78.png'
-import Img11 from '@/public/images/Layer79.png'
-import { TitleMice, DiffItem, BoxImageMice } from '@/views/Mice';
+import { BoxImageMice, DiffItem, TitleMice } from '@/views/Mice';
 import Booking from '@/views/Mice/Contact';
 import { useState } from 'react';
-import Headpage from '@/components/Head/head';
 import { Tourtype } from '../api/QuerryAPI';
-import ChangeTextHTML from '@/hook/ChangetextHTML';
 
 
 const cx = classNames.bind(style);
@@ -47,24 +41,29 @@ function Mice() {
                     </div>
 
                     <div className={cx('main')}>
-                        {/* <Section className={cx('sectionDiff')}> */}
-                        <TitleMice title={'WHAT ARE DIFFERENCE'} des={"We research, and select unique and clasey values to put into MICE products Customers can experiance the most different values when they have faith and order with VNXPEDIA"} />
+                        <TitleMice title={'WHAT ARE DIFFERENCE'} des={"We research, and select unique and clasey values to put into MICE products Customers can experiance the most different values when they have faith and order with Luxuryvietravel"} />
                         <div className={cx('sectionDiffCase')}>
-                            <BoxImageMice img={Img5} title="INNOVATIVE TEAM-BUIDLING" size={'45%'} />
-                            <BoxImageMice img={Img6} title="DINNING & EVENT VENUES" size={'45%'} />
-                            <BoxImageMice img={Img7} title="OUTSTANDING IDEA" size={'45%'} />
-                            <BoxImageMice img={Img8} title="LOCAL TRANSPORT EXPERIENCES" size={'45%'} />
+                            <div className={cx('item-card')}>
+                                <BoxImageMice img={Img5} title="INNOVATIVE TEAM-BUIDLING" size={'45%'} />
+                            </div>
+                            <div className={cx('item-card')}>
+                                <BoxImageMice img={Img6} title="DINNING & EVENT VENUES" size={'45%'} />
+                            </div>
+                            <div className={cx('item-card')}>
+                                <BoxImageMice img={Img7} title="OUTSTANDING IDEA" size={'45%'} />
+                            </div>
+                            <div className={cx('item-card')}>
+                                <BoxImageMice img={Img8} title="LOCAL TRANSPORT EXPERIENCES" size={'45%'} />
+                            </div>
                         </div>
-                        {/* </Section> */}
 
-                        {/* <Section className={cx('sectionDiff')}> */}
-                        <TitleMice title={'CASE STUDIES'} des={"We research, and select unique and classy values ​​to put into MICE products. Customers can experience the most different values ​​when they have faith and order with VNXPEDIA"} />
-                        {listTour.data && <div className={cx('sectionDiffCase')}>
+                        <TitleMice title={'CASE STUDIES'} des={"We research, and select unique and classy values ​​to put into MICE products. Customers can experience the most different values ​​when they have faith and order with Luxuryvietravel"} />
+                        {listTour.data && <div className={cx('sectionDiffCase-2')}>
                             {listTour.data.Object.map((d, i) =>
-                                <BoxImageMice img={`https://vnxpedia.3i.com.vn${d.HightlightImg}`} title={d.TourName} des={ChangeTextHTML(d.TourDescription)} size={'100%'} minWidth={'40rem'} />
+                                <div className={cx('item-card-2')} key={i}>
+                                    <BoxImageMice img={`https://vnxpedia.3i.com.vn${d.HightlightImg}`} id={d.TourCode} title={d.TourName} des={ChangeTextHTML(d.TourDescription)} size={'100%'} minWidth={'40rem'} />
+                                </div>
                             )}
-                            {/* <BoxImageMice img={Img9} title="Night barbecue party in Mui Ne for 120 paxs" des={"Recreate the image of a barbecue party in the desert at the sand dunes of Phan Thiet"} size={'100%'} minWidth={'40rem'} />
-                            <BoxImageMice img={Img10} title="A unique and luxurious wedding takes place on Phu Quoc beach" des={"With the request to organize a private and luxurious wedding space on Phu Quoc pearl beach it was perfectly fulfilled"} size={'100%'} minWidth={'40rem'} /> */}
                         </div>}
                         {/* </Section> */}
                     </div>

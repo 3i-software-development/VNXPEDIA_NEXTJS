@@ -5,10 +5,11 @@ import style from './style.module.scss';
 import Image from 'next/image';
 
 import { Searchtour, Searchblog } from '@/pages/api/QuerryAPI';
+import { GetlistImg } from '@/hook/GetListImg';
 
 const cx = classNames.bind(style);
 
-const Searchkey = () => {
+const Searchkey = ({ close }) => {
 
     const [keyword, setkeyword] = useState();
 
@@ -28,8 +29,8 @@ const Searchkey = () => {
                     <div className={cx('result-div')}>
                         <p className={cx('title')}>Tour result</p>
                         {tourSearch.data.map((d, i) =>
-                            <Link href={`/tour-detail/${d.TourCode}`} className={cx('result-tour')} key={i}>
-                                <Image src={`https://vnxpedia.3i.com.vn${d.HightlightImg}`} alt="vnxpedia-tour-img" className={cx('img')} width='500' height='500' />
+                            <Link href={`/tour-detail/${d.TourCode}`} className={cx('result-tour')} key={i} onClick={() => close(false)}>
+                                <Image src={`https://vnxpedia.3i.com.vn${d.HightlightImg}`} alt="Luxuryvietravel-tour-img" className={cx('img')} width='500' height='500' />
                                 <p>{d.TourName.toUpperCase()}</p>
                             </Link>
 
@@ -39,8 +40,8 @@ const Searchkey = () => {
                     <div className={cx('result-div')}>
                         <p className={cx('title')}> Blog result</p>
                         {blogSearch.data.map((d, i) =>
-                            <Link href={`/tour-detail/${d.id}`} className={cx('result-tour')} key={i}>
-                                <Image src={`https://vnxpedia.3i.com.vn${d.gallery}`} alt="vnxpedia-tour-img" className={cx('img')} width='500' height='500' />
+                            <Link href={`/blog-detail/${d.id}`} className={cx('result-tour')} key={i} onClick={() => close(false)}>
+                                <Image src={GetlistImg(d.gallery)[0]} alt="Luxuryvietravel-tour-img" className={cx('img')} width='500' height='500' />
                                 <p>{d.title.toUpperCase()}</p>
                             </Link>
 

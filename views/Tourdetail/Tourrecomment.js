@@ -25,9 +25,7 @@ const Tourrecomment = ({ type }) => {
             <div className={cx('tour-list')}>
                 {Data && Data.map(d =>
                     <Tourcard1 data={d} />)}
-                {/* <Tourcard1 data={data} />
-                <Tourcard1 data={data} />
-                <Tourcard1 data={data} /> */}
+
             </div>
         </div>
     )

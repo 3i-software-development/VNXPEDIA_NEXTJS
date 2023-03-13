@@ -10,30 +10,20 @@ import { useApppContext } from '@/pages/_app';
 const cx = classNames.bind(style);
 
 
-const WriteComment = ({ id, prid, loadcm, repname, setrepid, refet }) => {
+const WriteComment = ({ id, prid, repname, setrepid }) => {
     const [input, setinput] = useState('');
 
-    const [shouldFetch, setShouldFetch] = useState(false);
+
     const CT = useApppContext();
-
-    // const CallAPI = async () => {
-    //     const response = await Comment(id, prid ? `@${repname} ` + input : input, currentUser.FullName, prid);
-    //     if (response.status == 200) {
-    //         setloadcm();
-
-    //     }
-
-    // }
     const CreateComment = InsertComment(id, prid, CT.currentUser ? CT.currentUser.FullName : 'NoName', prid ? `@${repname} ` + input : input)
 
 
     const handleComment = () => {
         if (input != '') {
-            setShouldFetch(true);
-            refet(!loadcm);
+
+            CT.setreload(!CT.reload);
             CreateComment.refetch();
-            // CallAPI();
-            // const CreateComment = InsertComment(id, prid ? `@${repname} ` + input : input, currentUser.FullName, prid);
+
             setinput('');
             setrepid(null);
         }
@@ -46,7 +36,6 @@ const WriteComment = ({ id, prid, loadcm, repname, setrepid, refet }) => {
             {prid && <p> Reply comment of {repname}</p>}
             <textarea className={cx('textarea')} rows='10' onChange={(e) => setinput(e.target.value)} value={input}></textarea>
             <div className={cx('login-list')}>
-                {/* <span>Login by</span> */}
             </div>
             <button className={cx('btn-add')} onClick={() => handleComment()}>ADD COMMENT</button>
         </div>

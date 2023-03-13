@@ -10,11 +10,13 @@
 }
 .blog .img {
     width: 100%;
-    // height: 25vw;
+    height: 30vw;
+    min-height: 250px;
 }
 .blog .img .blogImg {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
 }
 
 .blog .icon {
@@ -49,7 +51,8 @@
     font-size: 1.2rem;
     line-height: 3rem;
     max-width: 77rem;
-    width: 90%;
+    text-align: justify;
+    text-justify: inter-word;
     display: block;
     display: -webkit-box;
     -webkit-line-clamp: 5;

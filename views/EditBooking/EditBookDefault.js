@@ -1,15 +1,12 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import national from '@/pages/api/national.json';
-import Link from "next/link";
-import classNames from 'classnames/bind';
-import style from '@/styles/informationBooking.module.scss';
-import { AiFillCloseCircle } from 'react-icons/ai';
+import { toastError, toastSuccess } from "@/components/Toast";
 import ScrollToTop from "@/hook/scrollToTop";
 import { EditBooking } from "@/pages/api/CallAPI";
-import { toastSuccess, toastError } from "@/components/Toast";
-import WatchBookDefault from "../WatchBook/WatchBookDeafult";
+import national from '@/pages/api/national.json';
+import style from '@/styles/informationBooking.module.scss';
+import classNames from 'classnames/bind';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 const cx = classNames.bind(style);
 
@@ -24,11 +21,11 @@ function EditBookDefault({ dataOld, toggle, reload, setreload }) {
 
     const [show, setShow] = useState(false);
     const [dataSelect, setDataSelect] = useState({ Hotel: '', Country: '', Note: '' });
-
     const CallEdit = async (data) => {
         const response = await EditBooking(data);
         if (response.status == 200) {
-            toastSuccess('Edit Success!')
+            toastSuccess('Edit Success!');
+            toggle(false);
         }
         else {
             toastError('Error')
@@ -39,7 +36,8 @@ function EditBookDefault({ dataOld, toggle, reload, setreload }) {
             Id: dataOld.Id,
             ...data,
             ...dataSelect
-        })
+        });
+
         setreload(!reload);
     }
 
@@ -255,10 +253,9 @@ function EditBookDefault({ dataOld, toggle, reload, setreload }) {
                     </div>
                 </div>
                 <div className={cx("content-bot")}>
-                    <button className={cx("btn-submit")} >SUMMIT</button>
+                    <button className={cx("btn-submit")} >SUBMIT</button>
                 </div>
             </form>}
-            {/* {show && <WatchBookDefault click={setShow} dataOld={data} />} */}
         </div>
 
     );
